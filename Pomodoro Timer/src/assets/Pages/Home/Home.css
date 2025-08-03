@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+header{
+    -webkit-app-region: drag;
+  height: 30px;
+  background: #2d2d2d;
+  color: white;
+  padding: 0 10px;
+    position: absolute;
+  top: 0;
+  left: 0; 
+}
+.header-container{
+  color: aquamarine;
+}
