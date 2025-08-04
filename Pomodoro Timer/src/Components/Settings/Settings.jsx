@@ -3,7 +3,7 @@ import settingsIcon from "../../assets/Img/settings.png";
 import crossIcon from "../../assets/Img/top-cross.png";
 import "./Settings.css";
 
-function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, settingsOn }) {
+function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, settingsOn, onButtonClick }) {
     const [tempWorkTime, setTempWorkTime] = useState(currentWorkTime);
     const [tempBreakTime, setTempBreakTime] = useState(currentBreakTime);
 
@@ -43,9 +43,12 @@ function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, sett
                     </div>
                     <img 
                         src={crossIcon} 
-                        onClick={onClose} 
+                        onClick={() => {
+                        onButtonClick();
+                        onClose();
+                    }}
                         alt="Close" 
-                        className="close-icon"
+                        className="close-icon pointer"
                     />
                 </div>
             </div>
@@ -81,6 +84,7 @@ function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, sett
                     className="save-button" 
                     onClick={() => {
                         handleSave();
+                        onButtonClick();
                         onClose();
                     }}
                 >

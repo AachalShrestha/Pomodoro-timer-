@@ -23,7 +23,7 @@ function TitleBar() {
 
   return (
     <div className="custom-title-bar">
-      <div className="window-title">☆:.Pomodoro Timer.:☆</div>
+      <div className="window-title"><h4>Pomodoro Timer.:☆</h4></div>
       <div className="window-controls">
         <div 
           className="minimize-btn title-btn" 
