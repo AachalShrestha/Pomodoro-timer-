@@ -34,7 +34,7 @@ function App() {
         </div>
         <Timer key={`${workTime}-${breakTime}`} workTime={workTime} breakTime={breakTime} />
         <Settings 
-          onSave={handleSaveSettings}
+          onSaveTime={handleSaveSettings}
           onClose={toggleSettings}
           currentWorkTime={workTime}
           currentBreakTime={breakTime}

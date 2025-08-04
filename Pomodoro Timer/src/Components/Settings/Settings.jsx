@@ -34,6 +34,7 @@ function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, sett
 
     return (
         <div className={`settings-wrapper ${settingsOn ? 'settings-on' : 'settings-off'}`}>
+            <div className="settings-inner">
             <div className="settings-header-wrapper">
                 <div className="settings-header">
                     <div className="settings-title">
@@ -53,7 +54,6 @@ function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, sett
                 <div className="timer-settings-inputs">
                     <div className="input-group">
                         <label>
-                            Focus (minutes)
                             <input 
                                 name="work" 
                                 type="number"
@@ -61,11 +61,11 @@ function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, sett
                                 value={tempWorkTime}
                                 onChange={handleInputChange}
                             />
+                            Focus (min)
                         </label>
                     </div>
                     <div className="input-group">
                         <label>
-                            Break (minutes)
                             <input 
                                 name="break" 
                                 type="number"
@@ -73,6 +73,7 @@ function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, sett
                                 value={tempBreakTime}
                                 onChange={handleInputChange}
                             />
+                            Break (min)
                         </label>
                     </div>
                 </div>
@@ -85,6 +86,7 @@ function Settings({ onSaveTime, onClose, currentWorkTime, currentBreakTime, sett
                 >
                     Save changes
                 </button> 
+            </div>
             </div>
         </div>
     );

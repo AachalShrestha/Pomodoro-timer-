@@ -21,7 +21,7 @@
   display: flex;
   gap: 5px; /* Space between buttons */
   padding-right: 10px;
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 
@@ -29,12 +29,17 @@
   margin-left: 10px;
 }
 
-.minimize-btn, .close-btn {
+.title-btn {
   -webkit-app-region: no-drag; /* Ensure buttons are clickable */
   background: transparent;
     border: 3px solid #9DA87D;
   cursor: pointer;
   padding: 3px 3px 0px 3px;
+  transition: 0.1s;
+}
+
+.title-btn:hover{
+  border: 3px solid var(--brown);
 }
 
 /* Add to your Home.css */

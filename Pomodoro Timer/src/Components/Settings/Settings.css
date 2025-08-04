@@ -1,7 +1,7 @@
 .settings-wrapper{
     z-index: 5;
-    width: 95%;
-    height: 95%;
+    width: 90%;
+    height: 80%;
     background-color: #D2D8BE;
     position: absolute;
     top: 2em;
@@ -11,10 +11,9 @@
 .settings-wrapper{
     text-align: left;
 }
-.settings-header-wrapper{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+
+.settings-inner{
+    margin:0 10px;
 }
 
 .settings-header{
@@ -58,4 +57,14 @@ h3{
 
 .timer-settings-container button{
     margin-top: 40px;
+}
+
+input{
+    width: 70%;
+    outline: none;
+    border: 2px solid #9DA87D;
+}
+
+input:focus{
+   border: 2px solid #6A4949;
 }
