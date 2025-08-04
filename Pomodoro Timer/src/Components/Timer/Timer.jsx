@@ -80,7 +80,11 @@ function Timer({workTime, breakTime}) {
             </div>
 
             <div className="gif-container">
-                <img src={idleGIF} />
+            <img src={
+                isActive 
+                ? (isWorkMode ? workGIF : breakGIF)
+                : idleGIF
+            } alt="Timer status" />
             </div>
             
             <div className="bottom-buttons">
