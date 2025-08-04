@@ -1,0 +1,30 @@
+
+
+.timer-container{
+  z-index: 5;
+  padding-top: 20px;
+}
+.time-display{
+  font-size: 50pt;
+}
+
+button{
+    margin-right: 10px;
+}
+
+.bottom-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.restartButton{
+    width: 30px;
+}
+
+.gif-container img{
+    max-height: 25vh;
+}
+

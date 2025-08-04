@@ -1,0 +1,66 @@
+:root{
+    --background-color: #BBC69E;
+    --brown: #6A4949
+}
+.custom-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-app-region: drag; /* Fixed typo (was -webkit-app-region) */
+  background-color: #BBC69E;
+  position: fixed; /* Add this */
+  height: 35px;
+  top: 0;
+  right: 0.4em;
+  z-index: 9999; /* Ensure it's on top */
+}
+
+.window-controls {
+  -webkit-app-region: no-drag; /* Crucial for clickable buttons */
+  display: flex;
+  gap: 5px; /* Space between buttons */
+  padding-right: 10px;
+  margin-top: 5px;
+}
+
+
+.window-title {
+  margin-left: 10px;
+}
+
+.minimize-btn, .close-btn {
+  -webkit-app-region: no-drag; /* Ensure buttons are clickable */
+  background: transparent;
+    border: 3px solid #9DA87D;
+  cursor: pointer;
+  padding: 3px 3px 0px 3px;
+}
+
+/* Add to your Home.css */
+.home-wrapper {
+  margin-top: 20px; /* Match title bar height */
+}
+
+/* Button sizes */
+.custom-title-bar img{
+  width: 14px;
+  z-index: 2;
+}
+
+.top-bar-button{
+  padding: 0.3em;
+  border: 3px solid #9DA87D;
+}
+header{
+  -webkit-app-region: drag;
+  height: 30px;
+  width: 90%;
+  text-align: left ;
+  background: var(--background-color);
+  color: white;
+  padding: 0 10px;
+    position: absolute;
+  top: 0;
+  left: 0; 
+}

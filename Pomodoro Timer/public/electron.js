@@ -1,35 +1,47 @@
-import { app, BrowserWindow } from 'electron'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { app, BrowserWindow, ipcMain } from 'electron';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Fix __dirname equivalent for ES Modules
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 400,
-    height: 500,
-    frame: false, // Remove default title bar
-    titleBarStyle: 'hidden', // For macOS
-    titleBarOverlay: true, // For Windows 11
+    width: 285,
+    height: 316,
+    frame: false,
+    titleBarStyle: 'hidden',
+    titleBarOverlay: false,
+    alwaysOnTop: true,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
+      preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: true,
+      nodeIntegration: false,
+      sandbox: true // Added for extra security
     }
-  })
+  });
 
-  // Load dev server in development
-  win.loadURL("http://localhost:5173") // Changed to Vite's default port
+  // Windows-specific adjustments
+  if (process.platform === 'win32') {
+    win.setMenuBarVisibility(false);
+  }
+
+  // Load dev server
+  win.loadURL("http://localhost:5173");
+
+  // IPC Handlers - Use .on() instead of .handle()
+  ipcMain.on('minimize-window', () => win.minimize());
+  ipcMain.on('close-window', () => win.close());
+  
 }
 
 app.whenReady().then(() => {
-  createWindow()
-
+  createWindow();
+  
   app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
-})
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit()
-})
+  if (process.platform !== 'darwin') app.quit();
+});

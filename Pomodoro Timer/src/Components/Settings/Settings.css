@@ -1,0 +1,61 @@
+.settings-wrapper{
+    z-index: 5;
+    width: 95%;
+    height: 95%;
+    background-color: #D2D8BE;
+    position: absolute;
+    top: 2em;
+    padding-top: 1em;
+}
+
+.settings-wrapper{
+    text-align: left;
+}
+.settings-header-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.settings-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3em;
+}
+
+.settings-header div img{
+    height: 25px;
+}
+
+.timer-settings-container label{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 40vw;
+}
+
+.timer-settings-inputs{
+    display: flex;
+    gap: 10px;
+}
+h3{
+    padding: 0;
+    margin: 0;
+}
+
+
+.settings-header div{
+    display: flex;
+}
+.settings-off{
+    display: none;
+}
+
+.settings-on{
+    display:block;
+}
+
+.timer-settings-container button{
+    margin-top: 40px;
+}
